@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.vitalsigns.sdk.ble.scan.BleScanner;
 import com.vitalsigns.sdk.ble.scan.BleScannerInterface;
+import com.vitalsigns.sdk.utility.RequestPermission;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -32,8 +33,11 @@ public class MainActivity extends AppCompatActivity
     mBleScanner = new BleScanner();
     if(mBleScanner.initialize(this, mBleScannerFailInitialize))
     {
-      mBleScanner.startScan(BLE_SCAN_TIIMEOUT, mBleScannerScanTimeout, mBleScannerDeviceFound);
-      mScanStart = true;
+      if(RequestPermission.accessCoarseLocation(MainActivity.this))
+      {
+        mBleScanner.startScan(BLE_SCAN_TIIMEOUT, mBleScannerScanTimeout, mBleScannerDeviceFound);
+        mScanStart = true;
+      }
     }
   }
 
