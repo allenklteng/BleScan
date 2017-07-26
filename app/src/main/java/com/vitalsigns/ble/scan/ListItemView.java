@@ -49,12 +49,14 @@ public class ListItemView extends LinearLayout
 
   /**
    * Set information
+   * @param index device index
    * @param name device name
    * @param rssi RSSI value
    * @param mac MAC address
    */
-  public ListItemView setInfo(String name, int rssi, String mac)
+  public ListItemView setInfo(int index, String name, int rssi, String mac)
   {
+    ((TextView)findViewById(R.id.index)).setText(String.format("%05d", index));
     ((TextView)findViewById(R.id.name)).setText(name);
     ((TextView)findViewById(R.id.rssi)).setText(String.format("%d", rssi));
     ((TextView)findViewById(R.id.mac)).setText(mac);

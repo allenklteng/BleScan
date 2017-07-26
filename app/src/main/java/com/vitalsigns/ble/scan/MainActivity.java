@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
       if(!mDeviceMacList.contains(name))
       {
         mDeviceMacList.add(name);
-        ((LinearLayout)findViewById(R.id.list)).addView(new ListItemView(MainActivity.this).setInfo(name, rssi, mac));
+        ((LinearLayout)findViewById(R.id.list)).addView(new ListItemView(MainActivity.this).setInfo(mDeviceMacList.size(), name, rssi, mac));
         Log.d(LOG_TAG, String.format("Find %d device %s(%s) with RSSI = %d", mDeviceMacList.size(), name, mac, rssi));
       }
     }
