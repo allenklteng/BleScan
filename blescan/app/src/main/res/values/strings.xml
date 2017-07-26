@@ -3,4 +3,8 @@
   <string name="item_name">BLE Device Name</string>
   <string name="item_rssi">RSSI Value</string>
   <string name="item_mac">MAC Address</string>
+  <string name="toast_ble_not_support">This device does not support BLE.</string>
+  <string name="toast_ble_disabled">BLE is disabled.\nPlease enable BLE to scan devices.</string>
+  <string name="toast_location_service_disabled">Location service is disabled.\nPlease enable location service to scan BLE devices.</string>
+  <string name="toast_ble_timeout">Scanning timeout.\nIt will be restarted immediately.</string>
 </resources>
