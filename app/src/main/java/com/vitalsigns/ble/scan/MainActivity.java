@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity
   {
     super.onStart();
 
+    Log.d(LOG_TAG, String.format("SDK version = %s", Utility.SdkVersion()));
+
     /// [AT-PM] : Initialize list ; 07/26/2017
     mDeviceMacList = new ArrayList<>();
 
